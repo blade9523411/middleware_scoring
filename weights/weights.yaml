@@ -1,0 +1,4 @@
+version: "weights@0.0.1"
+weights: { D: 0.25, O: 0.20, I: 0.20, M: 0.20, B: 0.15 }
+rounding: { score_decimals: 2, contribution_decimals: 3 }
+warning_thresholds: { min_source_confidence: 0.60 }
