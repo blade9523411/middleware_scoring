@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/company_schema/1-0-0",
+  "title": "company_schema v1.0.0",
+  "type": "object",
+  "required": ["company_id","domain","digital","ops","info_flow","market","budget","meta"],
+  "additionalProperties": false,
+  "properties": {
+    "company_id": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "domain": { "type": "string", "pattern": "^[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$" },
+
+    "digital": {
+      "type": "object",
+      "required": ["pagespeed","crm_flag","ecom_flag"],
+      "additionalProperties": false,
+      "properties": {
+        "pagespeed": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "crm_flag": { "type": "boolean" },
+        "ecom_flag": { "type": "boolean" }
+      }
+    },
+
+    "ops": {
+      "type": "object",
+      "required": ["employees","locations","services_count"],
+      "additionalProperties": false,
+      "properties": {
+        "employees": { "type": "integer", "minimum": 0, "maximum": 200000 },
+        "locations": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "services_count": { "type": "integer", "minimum": 0, "maximum": 10000 }
+      }
+    },
+
+    "info_flow": {
+      "type": "object",
+      "required": ["daily_docs_est"],
+      "additionalProperties": false,
+      "properties": {
+        "daily_docs_est": { "type": "integer", "minimum": 0, "maximum": 10000000 }
+      }
+    },
+
+    "market": {
+      "type": "object",
+      "required": ["competitor_density","industry_growth_pct","rivalry_index"],
+      "additionalProperties": false,
+      "properties": {
+        "competitor_density": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "industry_growth_pct": { "type": "number", "minimum": -100, "maximum": 100 },
+        "rivalry_index": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+
+    "budget": {
+      "type": "object",
+      "required": ["revenue_est_usd"],
+      "additionalProperties": false,
+      "properties": {
+        "revenue_est_usd": { "type": "number", "minimum": 0, "maximum": 10000000000000 }
+      }
+    },
+
+    "meta": {
+      "type": "object",
+      "required": ["scrape_ts","source_confidence"],
+      "additionalProperties": false,
+      "properties": {
+        "scrape_ts": { "type": "string", "format": "date-time" },
+        "source_confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
+  }
+}
