@@ -1,0 +1,11 @@
+version: policy@0.1.0
+risk:
+  min_source_confidence_low: 0.75     # >= low risk
+  min_source_confidence_med: 0.60     # >= medium risk, else high
+  max_scrape_age_low_days: 30         # <= low risk
+  max_scrape_age_med_days: 90         # <= medium risk, else high
+  missing_penalty_fields: ["budget.revenue_est_usd", "info_flow.daily_docs_est"]
+feasibility:
+  min_docs: 50                        # docs present gate
+  budget_floor_usd: 1000000           # $1M
+  require_any_of: ["digital.crm_flag", "digital.ecom_flag"]

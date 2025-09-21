@@ -11,6 +11,7 @@ src/aioscore.egg-info/top_level.txt
 src/aioscore/api/__init__.py
 src/aioscore/api/server.py
 src/aioscore/cli/__init__.py
+src/aioscore/cli/batch.py
 src/aioscore/cli/main.py
 src/aioscore/contracts/__init__.py
 src/aioscore/contracts/company_v1.py
@@ -23,6 +24,9 @@ src/aioscore/normalization/__init__.py
 src/aioscore/normalization/apply.py
 src/aioscore/normalization/stats.py
 src/aioscore/normalization/transforms.py
+src/aioscore/persist/db.py
+src/aioscore/risk/__init__.py
+src/aioscore/risk/assess.py
 src/aioscore/scoring/__init__.py
 src/aioscore/scoring/final.py
 src/aioscore/scoring/reason.py
@@ -31,5 +35,6 @@ tests/test_contracts.py
 tests/test_final_score.py
 tests/test_normalization.py
 tests/test_reason_text.py
+tests/test_risk.py
 tests/test_schema_lock.py
 tests/test_subscores.py

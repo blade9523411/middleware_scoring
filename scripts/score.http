@@ -1,0 +1,13 @@
+### health
+GET http://127.0.0.1:8080/healthz
+
+### stats
+GET http://127.0.0.1:8080/stats
+
+### score 1 record
+POST http://127.0.0.1:8080/score
+Content-Type: application/json
+
+{
+  "record": {{fixtures/companies.jsonl}}
+}
